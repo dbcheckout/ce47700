@@ -136,8 +136,7 @@ JAZZMIN_SETTINGS = {
     'auth': 'fas fa-users-cog',
     'auth.user': 'fas fa-user',
     'auth.Group': 'fas fa-users',
-    #'popets.usuario': 'fas fa-copyright',
-    #'popets.usuariotipo': 'fas fa-object-group',
+
  },
 
 
