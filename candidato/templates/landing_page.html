@@ -1,0 +1,48 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page - Candidato à Reeleição</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Reeleição para Vereador</h1>
+        <nav>
+            <ul>
+                <li><a href="#plano">Plano de Governo</a></li>
+                <li><a href="#acoes">Ações Realizadas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="plano">
+        <h2>Plano de Governo</h2>
+        {% for item in plano_governo %}
+            <div class="plano-item">
+                <h3>{{ item.titulo }}</h3>
+                <p>{{ item.descricao }}</p>
+            </div>
+        {% endfor %}
+    </section>
+
+    <section id="acoes">
+        <h2>Ações Realizadas</h2>
+        {% for acao in acoes_realizadas %}
+            <div class="acao-item">
+                <h3>{{ acao.titulo }}</h3>
+                <p>{{ acao.descricao }}</p>
+                <p><small>{{ acao.data }}</small></p>
+            </div>
+        {% endfor %}
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Candidato à Reeleição</p>
+    </footer>
+</body>
+</html>

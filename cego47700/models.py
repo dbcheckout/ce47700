@@ -6,6 +6,23 @@ from datetime import datetime
 #Django GeoDjango: Para trabalhar com dados geoespaciais mais complexos, como mapas e regiões.
 
 
+
+class PlanoGoverno(models.Model):
+    titulo = models.CharField(max_length=200)
+    descricao = models.TextField()
+
+    def __str__(self):
+        return self.titulo
+
+class AcoesRealizadas(models.Model):
+    titulo = models.CharField(max_length=200)
+    descricao = models.TextField()
+    data = models.DateField()
+
+    def __str__(self):
+        return self.titulo
+
+
 class Equipe(models.Model):
     id   = models.AutoField(primary_key=True)    
     nome = models.CharField(max_length=100)       
