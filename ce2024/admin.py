@@ -1,8 +1,12 @@
 from django.http import HttpResponse
 from django.contrib import admin
-from .models import CampanhaEleitoral,LocalArmazenamento,MaterialCampanha,Estoque,MovimentacaoMaterial,Equipe,Municipio,Regiao,Bairro,AtividadeCampanha,AplicacaoMaterial
+from .models import CampanhaEleitoral,LocalArmazenamento,MaterialCampanha,Estoque,MovimentacaoMaterial,Equipe,Municipio,Regiao,Bairro,AtividadeCampanha,AplicacaoMaterial,PlanoDeGoverno, Proposta, Acao
 
 # Register your models here.
+
+admin.site.register(PlanoDeGoverno)
+admin.site.register(Proposta)
+admin.site.register(Acao)
 
 @admin.register(Equipe)
 class EquipeAdmin(admin.ModelAdmin):
@@ -71,6 +75,8 @@ class AplicacaoMaterialAdmin(admin.ModelAdmin):
  list_display = ('material','local_aplicacao','quantidade','descricao',)
  search_fields = ('material','local_aplicacao','quantidade','descricao',)
  list_filter = ('material','local_aplicacao','quantidade','descricao',)
+
+
 
 
 

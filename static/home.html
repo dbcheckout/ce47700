@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <title>Reeleição Vereador</title>
+</head>
+<body>
+    <h1>Plano de Governo</h1>
+    <ul>
+        {% for plano in planos %}
+            <li>{{ plano.titulo }}: {{ plano.descricao }}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Propostas</h1>
+    <ul>
+        {% for proposta in propostas %}
+            <li>{{ proposta.titulo }}: {{ proposta.descricao }}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Ações Realizadas</h1>
+    <ul>
+        {% for acao in acoes %}
+            <li>{{ acao.titulo }} ({{ acao.data_realizacao }}): {{ acao.descricao }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+6. URLs
+No arquivo urls.py dentro do aplicativo campanha:
+
+python
+Copiar código
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.home, name='home'),
+]

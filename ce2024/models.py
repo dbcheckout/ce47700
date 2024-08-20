@@ -5,20 +5,25 @@ from datetime import datetime
 #Django Rest Framework (DRF): Se você precisa expor esses dados via API.
 #Django GeoDjango: Para trabalhar com dados geoespaciais mais complexos, como mapas e regiões.
 
-
-
-class PlanoGoverno(models.Model):
+class PlanoDeGoverno(models.Model):
     titulo = models.CharField(max_length=200)
     descricao = models.TextField()
-
+    
     def __str__(self):
         return self.titulo
 
-class AcoesRealizadas(models.Model):
+class Proposta(models.Model):
     titulo = models.CharField(max_length=200)
     descricao = models.TextField()
-    data = models.DateField()
+    
+    def __str__(self):
+        return self.titulo
 
+class Acao(models.Model):
+    titulo = models.CharField(max_length=200)
+    descricao = models.TextField()
+    data_realizacao = models.DateField()
+    
     def __str__(self):
         return self.titulo
 
